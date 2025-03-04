@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:recipe_app/core/core.dart';
 
@@ -26,8 +27,8 @@ class CategoryItem extends StatelessWidget {
         borderRadius: BorderRadius.circular(14),
         child: Image(
           image: CachedNetworkImageProvider(category.image),
-          width: width * AppSizes.wRatio,
-          height: height * AppSizes.hRatio,
+          width: width.w,
+          height: height.h,
           fit: BoxFit.cover,
         ),
       ),

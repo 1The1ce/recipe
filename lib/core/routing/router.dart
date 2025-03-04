@@ -13,6 +13,7 @@ import 'package:recipe_app/onboarding/presentation/pages/onboarding_view.dart';
 import 'package:recipe_app/profile/presentation/pages/profile_view.dart';
 import 'package:recipe_app/recipe_detail/presentation/pages/recipe_detail_view.dart';
 import 'package:recipe_app/recipe_detail/presentation/pages/recipe_detail_view_model.dart';
+import 'package:recipe_app/signup/presentation/pages/complete_profile_view.dart';
 import 'package:recipe_app/signup/presentation/pages/login_view.dart';
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 GoRouter router = GoRouter(
@@ -62,6 +63,10 @@ GoRouter router = GoRouter(
     GoRoute(
       path: Routes.myProfile,
       builder: (context, state) => ProfileView(),
+    ),
+    GoRoute(
+      path: Routes.completeProfile,
+      builder: (context, state) => CompleteProfileView(),
     ),
   ],
 );

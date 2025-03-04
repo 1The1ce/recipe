@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:recipe_app/onboarding/data/repositories/onboarding_repository.dart';
@@ -51,10 +52,13 @@ class RecipeApp extends StatelessWidget {
         Provider(create: (context) => AuthRepository(client: context.read())),
         ChangeNotifierProvider(create: (context) => AuthViewModel(authRepository: context.read())),
       ],
-      child: MaterialApp.router(
-        debugShowCheckedModeBanner: false,
-        theme: appThemeData,
-        routerConfig: router,
+      child: ScreenUtilInit(
+        designSize: Size(430, 932),
+        child: MaterialApp.router(
+          debugShowCheckedModeBanner: false,
+          theme: appThemeData,
+          routerConfig: router,
+        ),
       ),
     );
   }

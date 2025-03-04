@@ -31,7 +31,7 @@ class ProfileAppBar extends StatelessWidget implements PreferredSizeWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              myProfile.fullName,
+              myProfile.firstName,
               style: TextStyle(
                 color: AppColors.redPinkMain,
                 fontSize: 15,

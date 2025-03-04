@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:recipe_app/categories/presentation/pages/categories_view_model.dart';
 import 'package:recipe_app/core/core.dart';
 
@@ -44,8 +45,8 @@ class CategoriesPageBody extends StatelessWidget {
               if (viewModel.mainCategory != null)
                 CategoryItem(
                   category: viewModel.mainCategory!,
-                  width: 356 * AppSizes.wRatio,
-                  height: 148,
+                  width: 356.w,
+                  height: 148.h,
                   main: true,
                 ),
               SizedBox(height: 16),

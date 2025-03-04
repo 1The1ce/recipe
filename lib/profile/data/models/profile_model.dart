@@ -1,12 +1,13 @@
 class ProfileModel {
   final int id;
-  final String fullName, username, bio;
+  final String firstName, lastName, username, bio;
   final String image;
   final int recipes, following, followers;
 
   ProfileModel({
     required this.id,
-    required this.fullName,
+    required this.firstName,
+    required this.lastName,
     required this.username,
     required this.bio,
     required this.image,
@@ -18,7 +19,8 @@ class ProfileModel {
   factory ProfileModel.fromJson(Map<String, dynamic> json) {
     return ProfileModel(
       id: json['id'],
-      fullName: json['fullName'],
+      firstName: json['firstName'],
+      lastName: json['lastName'],
       username: json['username'],
       bio: json['presentation'],
       image: json['profilePhoto'],

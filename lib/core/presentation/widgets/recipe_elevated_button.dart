@@ -28,8 +28,8 @@ class RecipeElevatedButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: callback,
         style: ElevatedButton.styleFrom(
-          foregroundColor: foregroundColor,
-          backgroundColor: backgroundColor,
+          foregroundColor: Colors.white,
+          backgroundColor: AppColors.redPinkMain,
           fixedSize: size,
           elevation: elevation,
         ),

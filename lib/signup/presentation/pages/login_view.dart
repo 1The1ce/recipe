@@ -93,6 +93,7 @@ class LoginView extends StatelessWidget {
                     text: "Sign Up",
                     callback: () async {
                       await SecureStorage.deleteToken();
+                      context.go('/signup');
                     },
                     size: const Size(207, 45),
                   ),
