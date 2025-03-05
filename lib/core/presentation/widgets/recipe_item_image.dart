@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:recipe_app/categories_detail/data/models/recipe_model_small.dart';
 import 'package:recipe_app/core/core.dart';
 
 class RecipeItemImage extends StatelessWidget {

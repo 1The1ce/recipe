@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:recipe_app/core/core.dart';
-import 'package:recipe_app/onboarding/presentation/widgets/onboarding_continue_button.dart';
-import 'package:recipe_app/onboarding/presentation/widgets/onboarding_image_and_gradient.dart';
 import 'package:recipe_app/onboarding/presentation/manager/onboarding_view_model.dart';
 
 class OnboardingTitleAndSubtitle extends StatelessWidget {

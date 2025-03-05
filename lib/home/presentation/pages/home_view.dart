@@ -28,12 +28,14 @@ class HomeView extends StatelessWidget {
 class HomeViewContent extends StatelessWidget {
   const HomeViewContent({super.key});
 
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
       appBar: RecipeHomeAppBar(
-        title: "Hi! Dianne",
+        title: "Hi Dianne!",
         subtitle: "What are you cooking today?",
       ),
       body: ListView(

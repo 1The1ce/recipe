@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:provider/provider.dart';
 import 'package:recipe_app/core/core.dart';
-import 'package:recipe_app/recipe_detail/presentation/pages/recipe_detail_view_model.dart';
 
 class RecipeAppbarDetail extends StatelessWidget implements PreferredSizeWidget {
   const RecipeAppbarDetail({

@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:recipe_app/categories/data/models/category_model.dart';
 
 import '../../core.dart';
+import '../../routing/routes.dart';
 
 class CategoriesHorizontalScrollBar extends StatelessWidget implements PreferredSizeWidget {
   const CategoriesHorizontalScrollBar({
@@ -48,7 +49,7 @@ class CategoriesHorizontalBarItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () => context.go('/categories/detail', extra: category),
+      onPressed: () => context.go(Routes.categoryDetail, extra: category),
       style: ElevatedButton.styleFrom(
         padding: EdgeInsets.symmetric(horizontal: 10),
         foregroundColor: selected ? Colors.white : AppColors.redPinkMain,

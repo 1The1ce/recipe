@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:recipe_app/core/core.dart';
+import 'package:recipe_app/core/routing/routes.dart';
 
 import '../../data/models/category_model.dart';
 
@@ -36,7 +36,7 @@ class CategoryItem extends StatelessWidget {
 
     Widget title = Text(category.title);
     return GestureDetector(
-      onTap: () => context.go('/categories/detail', extra: category),
+      onTap: () => context.go(Routes.categoryDetail, extra: category),
       child: Column(
         children: [
           main ? title : image,
