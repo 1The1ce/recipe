@@ -1,19 +1,21 @@
 class UserModelInRecipeDetail {
   final int id;
-  final String username, fullName, image;
+  final String username, firstName,lastName, image;
 
   UserModelInRecipeDetail({
     required this.id,
     required this.username,
-    required this.fullName,
-    required this.image
+    required this.image,
+    required this.firstName,
+    required this.lastName
   });
 
   factory UserModelInRecipeDetail.fromJson(Map<String, dynamic> json) {
     return UserModelInRecipeDetail(
       id: json['id'],
       username: json['username'],
-      fullName: json['fullName'],
+      firstName: json['firstName'],
+      lastName: json['lastName'],
       image: json['profilePhoto'],
     );
   }

@@ -39,7 +39,15 @@ class RecipeDetailChefInfo extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  user.fullName,
+                  user.firstName,
+                  style: TextStyle(
+                    fontFamily: 'League Spartan',
+                    fontWeight: FontWeight.w300,
+                    fontSize: 14,
+                  ),
+                ),
+                Text(
+                  user.lastName,
                   style: TextStyle(
                     fontFamily: 'League Spartan',
                     fontWeight: FontWeight.w300,

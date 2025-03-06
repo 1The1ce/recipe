@@ -18,17 +18,17 @@ void main() {
 }
 
 class LocaleProvider with ChangeNotifier {
-  Locale _locale = Locale("ru");
+  Locale _locale = Locale("en");
 
   Locale get locale => _locale;
 
   void toggleLocale() {
-    if (_locale.languageCode == "ru") {
-      _locale = Locale("en");
-    } else if (_locale.languageCode == "en") {
+    if (_locale.languageCode == "en") {
+      _locale = Locale("ru");
+    } else if (_locale.languageCode == "ru") {
       _locale = Locale("uz");
     } else {
-      _locale = Locale("ru");
+      _locale = Locale("en");
     }
     notifyListeners();
   }
