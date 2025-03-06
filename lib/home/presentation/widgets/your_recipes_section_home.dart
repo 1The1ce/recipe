@@ -5,6 +5,8 @@ import 'package:recipe_app/core/core.dart';
 import 'package:recipe_app/home/presentation/manager/home_view_model.dart';
 import 'package:recipe_app/home/presentation/widgets/your_recipe_item.dart';
 
+import '../../../core/l10n/app_localizations.dart';
+
 class YourRecipesSectionHome extends StatelessWidget {
   const YourRecipesSectionHome({
     super.key,
@@ -26,7 +28,7 @@ class YourRecipesSectionHome extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           spacing: 9,
           children: [
-            Text("Your Recipes", style: TextStyles.homeSectionTitleWhite),
+            Text(AppLocalizations.of(context)!.yourRecipes, style: TextStyles.homeSectionTitleWhite),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

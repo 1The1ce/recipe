@@ -3,6 +3,8 @@ import 'package:provider/provider.dart';
 import 'package:recipe_app/core/auth_view_model.dart';
 import 'package:recipe_app/core/core.dart';
 
+import '../../../core/l10n/app_localizations.dart';
+
 class RecipePasswordField extends StatelessWidget {
   const RecipePasswordField({super.key});
 
@@ -14,7 +16,7 @@ class RecipePasswordField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "Password",
+          AppLocalizations.of(context)!.password,
           style: TextStyle(
             fontSize: 15,
             fontWeight: FontWeight.w500,

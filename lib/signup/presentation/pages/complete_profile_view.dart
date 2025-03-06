@@ -6,7 +6,6 @@ import '../../../core/utils/colors.dart';
 import '../../../core/utils/sizes.dart';
 import '../../widgets/app_bar.dart';
 import '../../widgets/profile_text_field.dart';
-import 'package:image_picker/image_picker.dart';
 
 class CompleteProfileView extends StatelessWidget {
   const CompleteProfileView({super.key});

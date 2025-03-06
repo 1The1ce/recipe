@@ -5,6 +5,8 @@ import 'package:recipe_app/core/data/models/top_chef_model_small.dart';
 import 'package:recipe_app/home/presentation/manager/home_view_model.dart';
 import 'package:recipe_app/home/presentation/widgets/top_chef_item_home.dart';
 
+import '../../../core/l10n/app_localizations.dart';
+
 class TopChefsSectionHome extends StatelessWidget {
   const TopChefsSectionHome({super.key});
 
@@ -17,7 +19,7 @@ class TopChefsSectionHome extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         spacing: 9,
         children: [
-          Text("Top Chef", style: TextStyles.homeSectionTitleRedPink),
+          Text(AppLocalizations.of(context)!.topChef, style: TextStyles.homeSectionTitleRedPink),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

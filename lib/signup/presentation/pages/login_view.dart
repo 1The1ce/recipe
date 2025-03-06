@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:recipe_app/core/auth_view_model.dart';
 import 'package:recipe_app/core/core.dart';
+import 'package:recipe_app/core/l10n/app_localizations.dart';
 import 'package:recipe_app/core/secure_storage.dart';
 import 'package:recipe_app/signup/presentation/pages/recipe_password_field.dart';
 
@@ -17,13 +18,14 @@ class LoginView extends StatelessWidget {
         toolbarHeight: 40,
         centerTitle: true,
         title: Text(
-          "Login",
+          AppLocalizations.of(context)!.logIn,
           style: TextStyle(
             color: AppColors.redPinkMain,
             fontSize: 20,
             fontWeight: FontWeight.w600,
           ),
         ),
+        actions: [],
       ),
       body: ListView(
         children: [
@@ -80,7 +82,8 @@ class LoginView extends StatelessWidget {
                   RecipePasswordField(),
                   SizedBox(height: 90),
                   RecipeElevatedButton(
-                    text: "Login",
+                    text: AppLocalizations.of(context)!.logIn,
+                    fontSize: 16,
                     callback: () async {
                       if (await vm.submitForm() && context.mounted) {
                         context.go('/');
@@ -90,7 +93,8 @@ class LoginView extends StatelessWidget {
                   ),
                   SizedBox(height: 27),
                   RecipeElevatedButton(
-                    text: "Sign Up",
+                    text: AppLocalizations.of(context)!.signUp,
+                    fontSize: 15,
                     callback: () async {
                       await SecureStorage.deleteToken();
                       context.go('/signup');

@@ -1,0 +1,11 @@
+{
+  "password": "Введите пароль",
+  "logIn": "Вход",
+  "signUp": "Регистрация",
+  "hi": "Привет!",
+  "whatAreYouCookingToday": "Что приготовим сегодня",
+  "trendingRecipe": "Трендовые Рецепты",
+  "yourRecipes": "Ваши Рецепты",
+  "topChef": "Топ Шеф",
+  "recentlyAdded": "Недавно Добавленные"
+}

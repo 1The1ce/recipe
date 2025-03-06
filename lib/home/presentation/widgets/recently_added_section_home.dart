@@ -4,6 +4,8 @@ import 'package:recipe_app/categories_detail/data/models/recipe_model_small.dart
 import 'package:recipe_app/core/core.dart';
 import 'package:recipe_app/home/presentation/manager/home_view_model.dart';
 
+import '../../../core/l10n/app_localizations.dart';
+
 class RecentlyAddedSectionHome extends StatelessWidget {
   const RecentlyAddedSectionHome({super.key});
 
@@ -17,7 +19,7 @@ class RecentlyAddedSectionHome extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           spacing: 9,
           children: [
-            Text("Recently Added", style: TextStyles.homeSectionTitleRedPink),
+            Text(AppLocalizations.of(context)!.recentlyAdded, style: TextStyles.homeSectionTitleRedPink),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
