@@ -92,4 +92,12 @@ class ApiClient {
     List<dynamic> data = response.data;
     return data;
   }
+
+  Future<List<dynamic>> fetchCommunityRecipes(int limit, String order,
+      bool descending) async {
+    var response = await dio.get(
+        '/recipes/community/list?Limit=$limit&Order$order&Descending$descending');
+    List<dynamic> data = response.data;
+    return data;
+  }
 }

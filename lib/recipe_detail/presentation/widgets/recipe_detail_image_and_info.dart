@@ -1,6 +1,8 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:recipe_app/core/core.dart';
+import 'package:recipe_app/recipe_detail/presentation/pages/recipe_detail_view_model.dart';
+import 'package:recipe_app/recipe_detail/presentation/widgets/recipe_detail_video.dart';
 
 class RecipeDetailImageAndInfo extends StatelessWidget {
   const RecipeDetailImageAndInfo({
@@ -17,6 +19,7 @@ class RecipeDetailImageAndInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final recipe = context.select((RecipeDetailViewModel vm) => vm.recipe);
     return Center(
       child: SizedBox(
         width: 357 * AppSizes.wRatio,
@@ -68,10 +71,29 @@ class RecipeDetailImageAndInfo extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(10),
               child: Image(
-                image: CachedNetworkImageProvider(image),
+                image: NetworkImage(image),
                 width: 357 * AppSizes.wRatio,
                 height: 281 * AppSizes.hRatio,
                 fit: BoxFit.cover,
+              ),
+            ),
+            Align(
+              alignment: Alignment.center,
+              child: RecipeIconButtonContainer(
+                image: "assets/icons/play.svg",
+                callback: () => Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => RecipeDetailVideo(
+                      videoUrl: recipe.videoRecipe,
+                    ),
+                  ),
+                ),
+                iconWidth: 30,
+                iconHeight: 40,
+                iconColor: Colors.white,
+                containerColor: AppColors.redPinkMain,
+                containerHeight: 74,
+                containerWidth: 74,
               ),
             ),
           ],

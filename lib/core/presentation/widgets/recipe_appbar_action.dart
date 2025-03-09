@@ -12,23 +12,25 @@ class RecipeIconButtonContainer extends StatelessWidget {
     required this.callback,
     this.iconWidth = 12,
     this.iconHeight = 18,
+    this.containerWidth = 28,
+    this.containerHeight = 28
   });
 
   final String image;
   final Color iconColor, containerColor;
 
-  final double iconWidth, iconHeight;
+  final double iconWidth, iconHeight, containerWidth, containerHeight;
 
   final VoidCallback callback;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 28,
-      height: 28,
+      width: containerWidth,
+      height: containerHeight,
       decoration: BoxDecoration(
         color: containerColor,
-        borderRadius: BorderRadius.circular(14),
+        borderRadius: BorderRadius.circular(90),
       ),
       child: RecipeIconButton(
         image: image,

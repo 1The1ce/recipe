@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:recipe_app/community/data/repositories/community_repository.dart';
 import 'package:recipe_app/core/l10n/app_localizations.dart';
 import 'package:recipe_app/onboarding/data/repositories/onboarding_repository.dart';
 import 'package:recipe_app/profile/data/repositories/profile_repository.dart';
@@ -43,26 +44,18 @@ class RecipeApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         Provider(create: (context) => ApiClient()),
-        Provider(
-            create: (context) => ProfileRepository(client: context.read())),
-        Provider(
-            create: (context) => OnboardingRepository(client: context.read())),
-        Provider(
-            create: (context) =>
-                CategoriesRepository(client: context.read<ApiClient>())),
-        Provider(
-            create: (context) =>
-                CategoriesDetailRepository(client: context.read())),
-        Provider(
-            create: (context) =>
-                RecipeDetailRepository(client: context.read())),
+        Provider(create: (context) => ProfileRepository(client: context.read())),
+        Provider(create: (context) => OnboardingRepository(client: context.read())),
+        Provider(create: (context) => CategoriesRepository(client: context.read<ApiClient>())),
+        Provider(create: (context) => CategoriesDetailRepository(client: context.read())),
+        Provider(create: (context) => RecipeDetailRepository(client: context.read())),
         Provider(create: (context) => RecipeRepository(client: context.read())),
-        Provider(
-            create: (context) => TopChefRepository(client: context.read())),
+        Provider(create: (context) => TopChefRepository(client: context.read())),
         Provider(create: (context) => AuthRepository(client: context.read())),
-        ChangeNotifierProvider(
-            create: (context) => AuthViewModel(authRepository: context.read())),
+        Provider(create: (context) => CommunityRepository(client: context.read())),
+        ChangeNotifierProvider(create: (context) => AuthViewModel(authRepository: context.read())),
         ChangeNotifierProvider(create: (context) => LocaleProvider()),
+
       ],
       child: Consumer<LocaleProvider>(
         builder: (context, localeProvider, child) {

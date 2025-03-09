@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:recipe_app/core/core.dart';
-
 import '../widgets/recipe_detail_chef_info.dart';
 import '../widgets/recipe_detail_details_section.dart';
 import '../widgets/recipe_detail_image_and_info.dart';
@@ -11,13 +11,11 @@ import 'recipe_detail_view_model.dart';
 class RecipeDetailView extends StatelessWidget {
   const RecipeDetailView({
     super.key,
-    required this.viewModel,
   });
-
-  final RecipeDetailViewModel viewModel;
 
   @override
   Widget build(BuildContext context) {
+    final viewModel = context.watch<RecipeDetailViewModel>();
     return ListenableBuilder(
       listenable: viewModel,
       builder: (context, widget) => switch (viewModel.loading) {

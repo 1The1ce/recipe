@@ -12,8 +12,8 @@ class AppSizes {
     Size size = MediaQuery.sizeOf(context);
     wRatio = size.width / 430;
     hRatio = size.height / 932;
-    padding38 = 32 * wRatio;
-    padding36 = 30 * wRatio;
+    padding38 = 38 * wRatio;
+    padding36 = 36 * wRatio;
     bottomNavBarWidth = 281 * wRatio;
     bottomNavBarHeight = 56 * hRatio;
   }

@@ -7,6 +7,7 @@ import 'package:recipe_app/categories/presentation/pages/categories_view_model.d
 import 'package:recipe_app/categories_detail/data/models/recipe_model_small.dart';
 import 'package:recipe_app/categories_detail/presentation/pages/categories_detail_view.dart';
 import 'package:recipe_app/categories_detail/presentation/pages/categories_detail_view_model.dart';
+import 'package:recipe_app/community/presentation/pages/community_view.dart';
 import 'package:recipe_app/core/routing/routes.dart';
 import 'package:recipe_app/home/presentation/pages/home_view.dart';
 import 'package:recipe_app/onboarding/presentation/pages/onboarding_view.dart';
@@ -15,6 +16,12 @@ import 'package:recipe_app/recipe_detail/presentation/pages/recipe_detail_view.d
 import 'package:recipe_app/recipe_detail/presentation/pages/recipe_detail_view_model.dart';
 import 'package:recipe_app/signup/presentation/pages/complete_profile_view.dart';
 import 'package:recipe_app/signup/presentation/pages/login_view.dart';
+
+import '../../community/data/repositories/community_repository.dart';
+import '../../community/presentation/manager/community_view_model.dart';
+
+
+
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 GoRouter router = GoRouter(
   navigatorKey: navigatorKey,
@@ -52,14 +59,16 @@ GoRouter router = GoRouter(
     ),
     GoRoute(
       path: Routes.recipeDetail,
-      builder: (context, state) => RecipeDetailView(
-        viewModel: RecipeDetailViewModel(
+      builder: (context, state) => ChangeNotifierProvider(
+        create: (context) => RecipeDetailViewModel(
           repo: context.read(),
           selected: state.extra as RecipeModelSmall,
           from: state.uri.queryParameters['from'] as String,
         ),
+        child: RecipeDetailView(),
       ),
     ),
+
     GoRoute(
       path: Routes.myProfile,
       builder: (context, state) => ProfileView(),
@@ -67,6 +76,18 @@ GoRouter router = GoRouter(
     GoRoute(
       path: Routes.completeProfile,
       builder: (context, state) => CompleteProfileView(),
+    ),
+    GoRoute(
+      path: Routes.community,
+      builder: (context, state) => ChangeNotifierProvider(
+        create: (context) => CommunityViewModel(
+          comRepo: context.read<CommunityRepository>(),
+          order: "date",
+          limit: 10,
+          descending: true,
+        ),
+        child: CommunityView(),
+      ),
     ),
   ],
 );
