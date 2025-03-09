@@ -22,7 +22,6 @@ class RecipeDetailDetailsSection extends StatelessWidget {
               "Details",
               style: TextStyles.recipeSectionTitle,
             ),
-            SizedBox(width: 15),
             RecipeTime(
               time: timeRequired,
               textColor: Colors.white,

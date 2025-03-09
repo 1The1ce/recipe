@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:recipe_app/core/core.dart';
-
 class CommunityAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CommunityAppBar({
     super.key,

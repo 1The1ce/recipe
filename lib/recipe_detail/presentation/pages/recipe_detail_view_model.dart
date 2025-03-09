@@ -7,19 +7,19 @@ import '../../data/repositories/recipe_detail_repository.dart';
 class RecipeDetailViewModel extends ChangeNotifier {
   RecipeDetailViewModel({
     required RecipeDetailRepository repo,
-    required this.selected,
-    required this.from,
+    required this.recipeId
   }) : _repo = repo {
     load();
   }
-  final String from;
   final RecipeDetailRepository _repo;
+  final int recipeId;
   bool loading = true;
   late RecipeModel recipe;
-  RecipeModelSmall selected;
 
   Future<void> load() async {
-    recipe = await _repo.fetchRecipeById(selected.id);
+    loading = true;
+    notifyListeners();
+    recipe = await _repo.fetchRecipeById(recipeId);
     loading = false;
     notifyListeners();
   }

@@ -35,7 +35,7 @@ class OldestRecipes extends StatelessWidget {
         return Column(
           children: [
             GestureDetector(
-              onTap: () => context.go("${Routes.recipeDetail}/${recipe.id}"),
+              onTap: () => context.push('${Routes.recipeDetail}/${vm.oldestRecipes[index].id}'),
               child: Container(
                 width: 356.w,
                 height: 319.h,

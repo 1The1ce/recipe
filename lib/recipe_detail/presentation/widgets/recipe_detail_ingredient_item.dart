@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:recipe_app/core/core.dart';
 
 class RecipeIngredientItem extends StatelessWidget {
@@ -25,7 +26,7 @@ class RecipeIngredientItem extends StatelessWidget {
           ),
           SizedBox(width: 6),
           SizedBox(
-            width: 357 * AppSizes.wRatio,
+            width: 340.w,
             child: Text(
               text,
               style: TextStyle(

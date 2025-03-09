@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:recipe_app/core/core.dart';
+import 'package:recipe_app/core/routing/routes.dart';
 import '../widgets/recipe_detail_chef_info.dart';
 import '../widgets/recipe_detail_details_section.dart';
 import '../widgets/recipe_detail_image_and_info.dart';
@@ -22,7 +24,7 @@ class RecipeDetailView extends StatelessWidget {
         true => Center(child: CircularProgressIndicator()),
         false => Scaffold(
             extendBody: true,
-            appBar: RecipeAppbarDetail(title: viewModel.recipe.title, goBackRoute: viewModel.from),
+            appBar: RecipeAppbarDetail(title: viewModel.recipe.title,goBackRoute: (){context.go(Routes.home);}),
             body: ListView(
               padding: EdgeInsets.fromLTRB(AppSizes.padding36, 20, AppSizes.padding36, 100),
               children: [

@@ -55,7 +55,6 @@ class RecipeApp extends StatelessWidget {
         Provider(create: (context) => CommunityRepository(client: context.read())),
         ChangeNotifierProvider(create: (context) => AuthViewModel(authRepository: context.read())),
         ChangeNotifierProvider(create: (context) => LocaleProvider()),
-
       ],
       child: Consumer<LocaleProvider>(
         builder: (context, localeProvider, child) {

@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
@@ -58,15 +59,17 @@ GoRouter router = GoRouter(
       ),
     ),
     GoRoute(
-      path: Routes.recipeDetail,
-      builder: (context, state) => ChangeNotifierProvider(
+      path: '${Routes.recipeDetail}/:recipeId',
+      builder: (context, state) {
+        final recipeId = int.parse(state.pathParameters['recipeId']!);
+        return ChangeNotifierProvider(
         create: (context) => RecipeDetailViewModel(
           repo: context.read(),
-          selected: state.extra as RecipeModelSmall,
-          from: state.uri.queryParameters['from'] as String,
+          recipeId: recipeId
         ),
         child: RecipeDetailView(),
-      ),
+      );
+      },
     ),
 
     GoRoute(

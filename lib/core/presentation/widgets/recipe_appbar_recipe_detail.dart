@@ -10,7 +10,7 @@ class RecipeAppbarDetail extends StatelessWidget implements PreferredSizeWidget 
   });
 
   final String title;
-  final String goBackRoute;
+  final VoidCallback goBackRoute;
 
   @override
   Size get preferredSize => const Size(double.infinity, 61);
@@ -23,7 +23,7 @@ class RecipeAppbarDetail extends StatelessWidget implements PreferredSizeWidget 
         toolbarHeight: 61,
         leadingWidth: 20,
         leading: RecipeIconButton(
-          callback: ()=> context.go(goBackRoute),
+          callback: goBackRoute,
           image: "assets/icons/back-arrow.svg",
           width: 30,
           height: 14,

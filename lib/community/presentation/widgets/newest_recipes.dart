@@ -6,6 +6,7 @@ import 'package:go_router/go_router.dart';
 import 'package:recipe_app/community/presentation/manager/community_view_model.dart';
 import 'package:recipe_app/core/core.dart';
 import 'package:recipe_app/core/utils/date_formatter.dart';
+
 import '../../../core/routing/routes.dart';
 
 class NewestRecipes extends StatelessWidget {
@@ -34,7 +35,7 @@ class NewestRecipes extends StatelessWidget {
         return Column(
           children: [
             GestureDetector(
-              onTap: () => context.go("${Routes.recipeDetail}/${recipe.id}"),
+              onTap: () => context.push('${Routes.recipeDetail}/${vm.newestRecipes[index].id}'),
               child: Container(
                 width: 356.w,
                 height: 319.h,
